@@ -1,0 +1,38 @@
+.save_contact {
+  margin: 30px;
+  margin-bottom: 60px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+.save_contact button {
+  width: 150px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #FFFFFF;
+  background-color: #fc3213;
+  border-radius: 40px;
+  border: solid #fc3213;
+}
+
+.save_contacts_item {
+  padding-bottom: 10px;
+}
+.contact_items p {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+
+}
+.contact_items img {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 10px;
+
+}
+.contact_items a {
+  color: #333;
+}

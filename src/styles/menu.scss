@@ -1,0 +1,22 @@
+.menu {
+  &__list {
+    display: flex;
+    margin: 50px 0;
+  }
+  &__item {
+    padding: 10px 60px;
+    margin: 2px;
+    border: 1px solid #ff583e;
+    cursor: pointer;
+    background: #FFFFFF;
+    &:hover {
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+    }
+    &.active {
+      background: #ff583e;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+    }
+
+  }
+}

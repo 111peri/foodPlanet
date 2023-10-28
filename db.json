@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "email": "kubanycbek412@gmail.com",
+      "password": "$2a$10$wXyHawyIQZlELBw.KEq2CetJ0ddOZWaWNK24J3lXemoy0EcpKCTlq",
+      "firstName": "Кубанычбек",
+      "lastName": "Султанов",
+      "id": 1
+    },
+    {
+      "email": "kubasultanov68@gmail.com",
+      "password": "$2a$10$OXDrFpjh3B3vcHZfGQVp8eM4HnwvywOebC/nmevhVubcFjx4M4C12",
+      "firstName": "Кубанычбек",
+      "lastName": "Султанов",
+      "id": 2
+    }
+  ],
+  "products": [],
+  "categories": []
+}

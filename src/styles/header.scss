@@ -1,0 +1,64 @@
+.header {
+  padding: 20px 0;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__link {
+    color: #333333;
+    font-weight: 500;
+    &.active, &:hover {
+      color: #ff583e;
+    }
+  }
+  &__phone {
+    color: #333333;
+  }
+  &__btn {
+    background: #ff583e;
+    padding: 10px;
+    border: none;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    &:hover {
+      background: #fc3213;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+    }
+    &.user {
+      width: 100%;
+    }
+    &.admin {
+      width: 100%;
+      background: #17cdef;
+      color: black;
+    }
+  }
+  &__login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: antiquewhite;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    z-index: 5;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
