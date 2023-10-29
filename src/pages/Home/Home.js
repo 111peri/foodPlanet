@@ -5,6 +5,7 @@ import burger from "../../assets/burger.png";
 import {AiOutlineArrowRight} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import ProductItem from "../../components/ProductItem/ProductItem";
+import ProductList from "../../components/ProductItem/ProductList";
 
 const Home = () => {
     return (
@@ -36,9 +37,8 @@ const Home = () => {
             }}>
                 Бургеры
             </h2>
-            <div className="product__list">
-                <ProductItem/>
-            </div>
+            <ProductList/>
+
 
             <h2 style={{
                 margin: '50px'

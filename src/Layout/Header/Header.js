@@ -8,27 +8,15 @@ import {BsFillTelephoneFill} from "react-icons/bs";
 import HeaderLogin from "./HeaderLogin/HeaderLogin";
 import {useDispatch, useSelector} from "react-redux";
 import {logoutUser} from "../../redux/reducers/auth";
-import  {BsCartCheckFill} from "react-icons/bs"
 
-const Header = ({cartItems}) => {
+const Header = ({ cartItems }) => {
 
-    const dispatch = useDispatch()
-    const {user} = useSelector(store => store.auth)
+    const dispatch = useDispatch();
+    const { user } = useSelector(store => store.auth);
 
-    const [authMenu, setAuthMenu] = React.useState(false)
+    const [authMenu, setAuthMenu] = React.useState(false);
 
-
-
-    function handleClick() {
-        this.setState({ cartItem: true });
-    }
-
-    };
-
-this.handleClick = undefined;
-
-
-return (
+    return (
         <header className='header'>
             <div className="container">
                 <nav className="header__nav">
@@ -54,13 +42,13 @@ return (
                             <button style={{
                                 background: 'red'
                             }} className="header__btn" onClick={() => {
-                                dispatch(logoutUser())
+                                dispatch(logoutUser());
                             }}>
                                 Выйти
                             </button>
                         ) : (
-                            <button className="header__btn" onClick={this.handleClick} => {
-                                setAuthMenu(true)
+                            <button className="header__btn" onClick={() => {
+                                setAuthMenu(true);
                             }}>
                                 Войти
                             </button>
@@ -79,17 +67,18 @@ return (
                         style={{ display: authMenu ? "block" : "none" }}
                         onClick={() => setAuthMenu(false)}
                     ></div>
-                    <HeaderLogin setMenu={setAuthMenu} menu={authMenu}/>
+                    <HeaderLogin setMenu={setAuthMenu} menu={authMenu} />
                     <a href="tel:+996777777777" className='header__phone'>
-                        <BsFillTelephoneFill className="header__phone-icon"/>
+                        <BsFillTelephoneFill className="header__phone-icon" />
                         +996777777777
                     </a>
 
                     <div className="cart-info">
                         <span> {cartItems ? `(${cartItems.length})` : '(0)'}</span>
-                        <button onClick={openCart}>Открыть корзину</button>
+                        <button
+                            // onClick={openCart}
+                        >Открыть корзину</button>
                     </div>
-
                 </nav>
             </div>
         </header>
@@ -97,3 +86,4 @@ return (
 };
 
 export default Header;
+

@@ -3,27 +3,6 @@ import burger1 from '../../assets/burger1.png';
 import burger2 from '../../assets/burger2.png';
 import burger4 from '../../assets/burger4.png';
 
-const products = [
-    {
-        image: burger1,
-        title: 'Чизбургер',
-        description: 'Булка, котлета, сыр, соленый огурец, лук, помидор, салат айсберг, соус чесночный, соус гриль, кетчуп, майонез',
-        price: '200'
-    },
-    {
-        image: burger2,
-        title: 'Бургер 2',
-        description: 'Описание бургера 2',
-        price: '220'
-    },
-    {
-        image: burger4,
-        title: 'Бургер 4',
-        description: 'Описание бургера 4',
-        price: '240'
-    },
-];
-
 const ProductItem = ({ product, addToCart }) => {
     const [count, setCount] = useState(0);
 
@@ -44,12 +23,18 @@ const ProductItem = ({ product, addToCart }) => {
         }
     };
 
+    console.log(product)
+
     return (
         <div className="product__item">
-            <img src={product.image} alt={product.title} className="product__item-img" />
-            <h4 className="product__item-title">{product.title}</h4>
-            <p className="product__item-desc">{product.description}</p>
-            <h4 className="product__item-price">{product.price} сом</h4>
+            {product && (
+                <>
+                    <img src={product.image} alt={product.title} className="product__item-img" />
+                    <h4 className="product__item-title">{product.title}</h4>
+                    <p className="product__item-desc">{product.description}</p>
+                    <h4 className="product__item-price">{product.price} сом</h4>
+                </>
+            )}
             <div className="product__item-counter">
         <span>
           <button onClick={decrement}>-</button>
