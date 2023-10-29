@@ -19,35 +19,35 @@ const Header = () => {
     return (
         <header className='header'>
             <div className="container">
-                <nav className="headerNav">
-                    <h1 className="headerLogo">
+                <nav className="header__nav">
+                    <h1 className="header__logo">
                         <NavLink to={''}>
                             <img src={Logo} alt=""/>
                         </NavLink>
                     </h1>
-                    <NavLink to='' className='headerLink'>
+                    <NavLink to='' className='header__link'>
                         Главная
                     </NavLink>
-                    <NavLink to='menu' className='headerLink'>
+                    <NavLink to='menu' className='header__link'>
                         Меню
                     </NavLink>
-                    <NavLink to='delivery' className='headerLink'>
+                    <NavLink to='delivery' className='header__link'>
                         Доставка
                     </NavLink>
-                    <NavLink to='contacts' className='headerLink'>
+                    <NavLink to='contacts' className='header__link'>
                         Контакты
                     </NavLink>
                     {
                         user ? (
                             <button style={{
                                 background: 'red'
-                            }} className="headerBtn" onClick={() => {
+                            }} className="header__btn" onClick={() => {
                                 dispatch(logoutUser())
                             }}>
                                 Выйти
                             </button>
                         ) : (
-                            <button className="headerBtn" onClick={() => {
+                            <button className="header__btn" onClick={() => {
                                 setAuthMenu(true)
                             }}>
                                 Войти
@@ -68,8 +68,8 @@ const Header = () => {
                         onClick={() => setAuthMenu(false)}
                     ></div>
                     <HeaderLogin setMenu={setAuthMenu} menu={authMenu}/>
-                    <a href="tel:+996777777777" className='headerPhone'>
-                        <BsFillTelephoneFill className="headerPhoneIcon"/>
+                    <a href="tel:+996777777777" className='header__phone'>
+                        <BsFillTelephoneFill className="header__phone-icon"/>
                         +996777777777
                     </a>
                 </nav>

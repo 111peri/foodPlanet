@@ -1,0 +1,31 @@
+.product_description {
+  text-align: center;
+}
+.product_description  p {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px ;
+
+
+}
+.product_description img {
+  margin-left: 250px;
+  display: block;
+}
+.product_price {
+  margin-right: 450px;
+}
+
+
+
+.add_to_cart {
+  margin-top: 15px;
+  width: 150px;
+  height: 38px;
+  background-color: #fc3213;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 40px;
+  border: solid #fc3213;
+}

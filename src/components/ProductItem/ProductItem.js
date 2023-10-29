@@ -2,24 +2,24 @@ import React from 'react';
 
 
 //media
-import burger from "../../assets/burger.png";
+import burger1 from "../../assets/burger1.png";
 
 const ProductItem = () => {
     return (
-        <div className='productItem'>
-            <img src={burger} alt="" className="productItemImg"/>
-            <h4 className="productItemTitle">
+        <div className='product__item'>
+            <img src={burger1} alt="" className="product__item-img"/>
+            <h4 className="product__item-title">
                 Чизбургер
             </h4>
-            <p className="productItem-desc">
+            <p className="product__item-desc">
                 Булка, котлета , сыр, соленый огурец,
                 лук, помидор, салат айсберг, соус чесночный,
                 соус гриль, кетчуп, майонез
             </p>
-            <h4 className="productItemPrice">
+            <h4 className="product__item-price">
                 200 сом
             </h4>
-            <div className='productItemCounter'>
+            <div className='product__item-counter'>
                 <span>
                     <button>
                         -
@@ -33,7 +33,7 @@ const ProductItem = () => {
                 </span>
             </div>
             <div>
-                <button className="productItemBtn">
+                <button className="product__item-btn">
                     Добавить в корзину
                 </button>
             </div>
