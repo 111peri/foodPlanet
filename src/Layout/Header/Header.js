@@ -8,6 +8,7 @@ import {BsFillTelephoneFill} from "react-icons/bs";
 import HeaderLogin from "./HeaderLogin/HeaderLogin";
 import {useDispatch, useSelector} from "react-redux";
 import {logoutUser} from "../../redux/reducers/auth";
+import  {BsCartCheckFill} from "react-icons/bs"
 
 const Header = ({cartItems}) => {
 
@@ -16,7 +17,18 @@ const Header = ({cartItems}) => {
 
     const [authMenu, setAuthMenu] = React.useState(false)
 
-    return (
+
+
+    function handleClick() {
+        this.setState({ cartItem: true });
+    }
+
+    };
+
+this.handleClick = undefined;
+
+
+return (
         <header className='header'>
             <div className="container">
                 <nav className="header__nav">
@@ -47,7 +59,7 @@ const Header = ({cartItems}) => {
                                 Выйти
                             </button>
                         ) : (
-                            <button className="header__btn" onClick={() => {
+                            <button className="header__btn" onClick={this.handleClick} => {
                                 setAuthMenu(true)
                             }}>
                                 Войти
@@ -74,9 +86,10 @@ const Header = ({cartItems}) => {
                     </a>
 
                     <div className="cart-info">
-                        <span>Корзина ({cartItems.length})</span>
-                        <button>Открыть корзину</button>
+                        <span> {cartItems ? `(${cartItems.length})` : '(0)'}</span>
+                        <button onClick={openCart}>Открыть корзину</button>
                     </div>
+
                 </nav>
             </div>
         </header>

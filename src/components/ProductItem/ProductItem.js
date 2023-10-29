@@ -68,15 +68,5 @@ const ProductItem = ({ product, addToCart }) => {
     );
 };
 
-const ProductList = ({ addToCart }) => {
-    return (
-        <div className="product__list">
-            {products.map((product, index) => (
-                <ProductItem key={index} product={product} addToCart={addToCart} />
-            ))}
-        </div>
-    );
-};
-
-export default ProductList;
+export default ProductItem
 
