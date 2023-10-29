@@ -38,9 +38,6 @@ const Home = () => {
             </h2>
             <div className="product__list">
                 <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
             </div>
 
             <h2 style={{
@@ -51,8 +48,6 @@ const Home = () => {
             <div className="product__list">
                 <ProductItem/>
                 <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
             </div>
 
             <h2 style={{
@@ -61,9 +56,6 @@ const Home = () => {
                 Суши
             </h2>
             <div className="product__list">
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
                 <ProductItem/>
             </div>
         </>

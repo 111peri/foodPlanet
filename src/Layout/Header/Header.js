@@ -9,7 +9,7 @@ import HeaderLogin from "./HeaderLogin/HeaderLogin";
 import {useDispatch, useSelector} from "react-redux";
 import {logoutUser} from "../../redux/reducers/auth";
 
-const Header = () => {
+const Header = ({cartItems}) => {
 
     const dispatch = useDispatch()
     const {user} = useSelector(store => store.auth)
@@ -72,6 +72,11 @@ const Header = () => {
                         <BsFillTelephoneFill className="header__phone-icon"/>
                         +996777777777
                     </a>
+
+                    <div className="cart-info">
+                        <span>Корзина ({cartItems.length})</span>
+                        <button>Открыть корзину</button>
+                    </div>
                 </nav>
             </div>
         </header>

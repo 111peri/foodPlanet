@@ -9,19 +9,6 @@ const Menu = () => {
             <ProductMenu/>
             <div className="product__list">
                 <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
             </div>
 
         </>
