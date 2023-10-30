@@ -1,20 +1,25 @@
-import React from 'react';
-import {NavLink} from "react-router-dom";
-
-
-//media
+import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
-import {BsFillTelephoneFill} from "react-icons/bs";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import HeaderLogin from "./HeaderLogin/HeaderLogin";
-import {useDispatch, useSelector} from "react-redux";
-import {logoutUser} from "../../redux/reducers/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../../redux/reducers/auth";
+import cart_Icon from "../../assets/cart_Icon.png"
+
 
 const Header = ({ cartItems }) => {
-
     const dispatch = useDispatch();
     const { user } = useSelector(store => store.auth);
 
-    const [authMenu, setAuthMenu] = React.useState(false);
+    const [authMenu, setAuthMenu] = useState(false);
+    const [isCartOpen, setCartOpen] = useState(false);
+
+    const totalProductsInCart = useSelector((state) => state.cart.items.length);
+
+    function openCart() {
+        setCartOpen(true);
+    }
 
     return (
         <header className='header'>
@@ -64,20 +69,20 @@ const Header = ({ cartItems }) => {
                     }
                     <div
                         className="overlay"
-                        style={{ display: authMenu ? "block" : "none" }}
+                        style={{display: authMenu ? "block" : "none"}}
                         onClick={() => setAuthMenu(false)}
                     ></div>
-                    <HeaderLogin setMenu={setAuthMenu} menu={authMenu} />
+                    <HeaderLogin setMenu={setAuthMenu} menu={authMenu}/>
                     <a href="tel:+996777777777" className='header__phone'>
-                        <BsFillTelephoneFill className="header__phone-icon" />
+                        <BsFillTelephoneFill className="header__phone-icon"/>
                         +996777777777
                     </a>
 
                     <div className="cart-info">
-                        <span> {cartItems ? `(${cartItems.length})` : '(0)'}</span>
-                        <button
-                            // onClick={openCart}
-                        >Открыть корзину</button>
+                        <img src={cart_Icon} alt="Cart" className="header__cart"/>
+                        <span> {cartItems ? `(${cartItems})` : '0'}</span>
+                        <span>{totalProductsInCart}</span>
+
                     </div>
                 </nav>
             </div>

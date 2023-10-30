@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import burger1 from '../../assets/burger1.png';
-import burger2 from '../../assets/burger2.png';
-import burger4 from '../../assets/burger4.png';
+import React, { useState} from "react";
+import { useDispatch } from 'react-redux';
+
 
 const ProductItem = ({ product, addToCart }) => {
     const [count, setCount] = useState(0);
@@ -16,14 +15,14 @@ const ProductItem = ({ product, addToCart }) => {
         setCount(count + 1);
     };
 
+    const dispatch = useDispatch();
+
     const handleAddToCart = () => {
         if (count > 0) {
-            addToCart({ ...product, count });
+            dispatch(addToCart({ ...product, count }));
             setCount(0);
         }
     };
-
-    console.log(product)
 
     return (
         <div className="product__item">
@@ -53,5 +52,11 @@ const ProductItem = ({ product, addToCart }) => {
     );
 };
 
-export default ProductItem
+
+
+
+
+export default ProductItem;
+
+
 

@@ -40,6 +40,7 @@ const Home = () => {
             <ProductList/>
 
 
+
             <h2 style={{
                 margin: '50px'
             }}>
@@ -56,6 +57,7 @@ const Home = () => {
                 Суши
             </h2>
             <div className="product__list">
+                <ProductItem/>
                 <ProductItem/>
             </div>
         </>
