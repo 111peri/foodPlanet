@@ -5,7 +5,6 @@ import ProductItem from "../../components/ProductItem/ProductItem";
 const Menu = () => {
     return (
         <>
-
             <ProductMenu/>
             <div className="product__list">
                 <ProductItem/>

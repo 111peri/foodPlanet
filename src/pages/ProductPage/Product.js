@@ -41,7 +41,7 @@ function Product(props) {
                 <button onClick={handleDecrement}>-</button>
                 <button onClick={handleIncrement}>+</button>
                 <p>Количество: {count}</p>
-                <button onClick={handleAddToCart} className="add_to_cart">Добавить в корзину</button>
+                <button onClick={handleAddToCart}>Добавить в корзину</button>
             </div>
 
         </div>

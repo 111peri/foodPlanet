@@ -1,11 +1,12 @@
 import React from 'react';
+import {AiOutlineArrowRight} from "react-icons/ai";
+import {Link} from "react-router-dom";
+import ProductList from "../../components/ProductItem/ProductList";
+import Pizza from "../../components/ProductItem/Pizza";
+
 
 //media
 import burger from "../../assets/burger.png";
-import {AiOutlineArrowRight} from "react-icons/ai";
-import {Link} from "react-router-dom";
-import ProductItem from "../../components/ProductItem/ProductItem";
-import ProductList from "../../components/ProductItem/ProductList";
 
 const Home = () => {
     return (
@@ -47,18 +48,17 @@ const Home = () => {
                 Пиццы
             </h2>
             <div className="product__list">
-                <ProductItem/>
-                <ProductItem/>
+                <Pizza/>
+                <Pizza/>
             </div>
 
             <h2 style={{
                 margin: '50px'
             }}>
-                Суши
+                Отзывы
             </h2>
             <div className="product__list">
-                <ProductItem/>
-                <ProductItem/>
+
             </div>
         </>
     );

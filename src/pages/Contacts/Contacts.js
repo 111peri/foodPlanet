@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import instagram from '../../assets/instagram.png'
-import whatsapp from '../../assets/whatsapp.png'
+import instagram from '../../assets/instagram.png';
+import whatsapp from '../../assets/whatsapp.png';
 
 function Contacts() {
     const [address, setAddress] = useState('улица,дом,кв');
@@ -41,18 +41,16 @@ function Contacts() {
                     <p>Вы можете связаться с нами через следующие социальные сети и мессенджеры:</p>
                     <ul>
                         <li>
-                            <a href="https://www.instagram.com/ваш_инстаграм">Инстаграм</a>
+                            <a href="https://www.instagram.com/ " target="_blank" rel="noopener noreferrer">Инстаграм</a>
                             <img src={instagram} alt="#"/>
                         </li>
                         <li>
-                            <a href="https://api.whatsapp.com/send?phone=ваш_номер">WhatsApp</a>
+                            <a href="https://api.whatsapp.com/send?phone=996704164171" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                             <img src={whatsapp} alt="#"/>
                         </li>
                     </ul>
-                </div> )}
-
-
-
+                </div>
+            )}
         </div>
     );
 }

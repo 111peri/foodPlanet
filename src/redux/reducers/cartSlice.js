@@ -1,8 +1,8 @@
-// cartSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
+
 const cartSlice = createSlice({
-    name: 'cart', // Имя вашего слайса
+    name: 'Cart',
     initialState: {
         items: [], // Массив товаров в корзине
     },
@@ -11,12 +11,12 @@ const cartSlice = createSlice({
             state.items.push(action.payload); // Добавление товара в корзину
         },
         removeFromCart: (state, action) => {
-            state.items = state.items.filter(item => item.id !== action.payload.id); // Удаление товара из корзины
+            state.items = state.items.filter(item => item.id !== action.payload.id);
         },
     },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions; // Экспорт экшенов
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
-export default cartSlice.reducer; // Экспорт редуктора
+export default cartSlice.reducer;
 

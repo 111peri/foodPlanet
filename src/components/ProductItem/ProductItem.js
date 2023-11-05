@@ -1,8 +1,8 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
+import {addToCart} from '../../redux/reducers/cartSlice'
 
-
-const ProductItem = ({ product, addToCart }) => {
+const ProductItem = ({product}) => {
     const [count, setCount] = useState(0);
 
     const decrement = () => {
@@ -35,13 +35,13 @@ const ProductItem = ({ product, addToCart }) => {
                 </>
             )}
             <div className="product__item-counter">
-        <span>
-          <button onClick={decrement}>-</button>
-        </span>
+                <span>
+                    <button onClick={decrement}>-</button>
+                </span>
                 {count}
                 <span>
-          <button onClick={increment}>+</button>
-        </span>
+                    <button onClick={increment}>+</button>
+                </span>
             </div>
             <div>
                 <button className="product__item-btn" onClick={handleAddToCart}>
@@ -52,11 +52,8 @@ const ProductItem = ({ product, addToCart }) => {
     );
 };
 
-
-
-
-
 export default ProductItem;
+
 
 
 
