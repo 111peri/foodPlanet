@@ -5,7 +5,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import HeaderLogin from "./HeaderLogin/HeaderLogin";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../redux/reducers/auth";
-import cart_Icon from "../../assets/cart_Icon.png"
+import cart_Icon from "../../assets/cart_Icon.png";
 
 
 const Header = ({ cartItems }) => {
@@ -13,14 +13,9 @@ const Header = ({ cartItems }) => {
     const { user } = useSelector(store => store.auth);
 
     const [authMenu, setAuthMenu] = useState(false);
-    const [isCartOpen, setCartOpen] = useState(false);
 
-    const totalProductsInCart = useSelector((state) => state.cart.items.length);
 
-    function openCart() {
-        setCartOpen(true);
-    }
-
+    let totalProductsCount;
     return (
         <header className='header'>
             <div className="container">
@@ -77,12 +72,15 @@ const Header = ({ cartItems }) => {
                         <BsFillTelephoneFill className="header__phone-icon"/>
                         +996777777777
                     </a>
-
                     <div className="cart-info">
-                        <img src={cart_Icon} alt="Cart" className="header__cart"/>
-                        <span> {cartItems ? `(${cartItems})` : '0'}</span>
-                        <span>{totalProductsInCart}</span>
-
+                        <img
+                            src={cart_Icon}
+                            alt="Cart"
+                            className="header__cart"
+                        />
+                        <div id="cartCount">
+                            {totalProductsCount}
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -91,4 +89,5 @@ const Header = ({ cartItems }) => {
 };
 
 export default Header;
+
 

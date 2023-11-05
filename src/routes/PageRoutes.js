@@ -11,6 +11,7 @@ import ProductForm from "../pages/AdminPanel/ProductForm";
 import Product from "../pages/ProductPage/Product";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import CartPage from "../pages/CartPage/CartPage"
 
 export default function PageRoutes () {
     return useRoutes([
@@ -61,6 +62,11 @@ export default function PageRoutes () {
                 {
                     path: 'auth/register',
                     element: <Register/>
+                },
+                {
+                    path: 'cart',
+                    element: <CartPage/>,
+
                 }
 
             ]

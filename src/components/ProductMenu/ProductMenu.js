@@ -6,7 +6,7 @@ const ProductMenu = () => {
 
     return (
         <div className="menu__list">
-            <button className={`menu__item ${menu === 'burgers' ? 'active' : ''}`}
+            <button  className={`menu__item ${menu === 'burgers' ? 'active' : ''}`}
                     onClick={() => {
                         setMenu('burgers')
                     }}

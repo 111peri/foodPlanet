@@ -4,7 +4,7 @@ import auth from "../redux/reducers/admin";
 import cart from '../redux/reducers/cartSlice'
 import cartReducer from '../redux/reducers/cartSlice';
 
-const store = configureStore({
+ export const store = configureStore({
     reducer: {
         admin,
         auth,
@@ -14,4 +14,4 @@ const store = configureStore({
     },
 });
 
-export default store;
+
