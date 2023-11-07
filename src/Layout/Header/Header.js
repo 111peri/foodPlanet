@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import HeaderLogin from "./HeaderLogin/HeaderLogin";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../redux/reducers/auth";
-import cart_Icon from "../../assets/cart_Icon.png";
+import {PiShoppingCartBold} from "react-icons/pi";
 
 
-const Header = ({ cartItems }) => {
+const Header = () => {
     const dispatch = useDispatch();
     const { user } = useSelector(store => store.auth);
+    const cart = useSelector((state) => state.cart.cart)
+    const navigate = useNavigate()
+
 
     const [authMenu, setAuthMenu] = useState(false);
 
 
-    let totalProductsCount;
     return (
         <header className='header'>
             <div className="container">
@@ -72,15 +74,8 @@ const Header = ({ cartItems }) => {
                         <BsFillTelephoneFill className="header__phone-icon"/>
                         +996777777777
                     </a>
-                    <div className="cart-info">
-                        <img
-                            src={cart_Icon}
-                            alt="Cart"
-                            className="header__cart"
-                        />
-                        <div id="cartCount">
-                            {totalProductsCount}
-                        </div>
+                    <div onClick={() => navigate("/cart")} className="cart-info">
+                        <PiShoppingCartBold/>
                     </div>
                 </nav>
             </div>

@@ -11,7 +11,7 @@ import ProductForm from "../pages/AdminPanel/ProductForm";
 import Product from "../pages/ProductPage/Product";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
-import CartPage from "../pages/CartPage/CartPage"
+import Cart from "../components/Cart/Cart";
 
 export default function PageRoutes () {
     return useRoutes([
@@ -64,9 +64,8 @@ export default function PageRoutes () {
                     element: <Register/>
                 },
                 {
-                    path: 'cart',
-                    element: <CartPage/>,
-
+                    path: 'cart/cart',
+                    element: <Cart/>
                 }
 
             ]

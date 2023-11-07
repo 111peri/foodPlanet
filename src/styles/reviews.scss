@@ -1,0 +1,27 @@
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  &__list {
+    height: 304px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+  &__name {
+    text-align: center;
+  }
+  &__title {
+    padding-top: 20px;
+    width: 216px;
+    height: 104px;
+
+  }
+}

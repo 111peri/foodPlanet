@@ -7,6 +7,7 @@ import Pizza from "../../components/ProductItem/Pizza";
 
 //media
 import burger from "../../assets/burger.png";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
     return (
@@ -58,7 +59,7 @@ const Home = () => {
                 Отзывы
             </h2>
             <div className="product__list">
-
+            <Reviews/>
             </div>
         </>
     );

@@ -1,85 +1,47 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import {Link} from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { removeProductFromCart } from '../../redux/reducers/cartSlice';
+import productItem from "../ProductItem/ProductItem";
 
-const CartPage = ({ onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
-    const cart = useSelector((state) => state.cart);
-    const classes = useStyles(); // Вставьте вашу функцию стилей useStyles из старого кода
+const Cart = () => {
+    const location = useLocation();
+    const isCartPage = location.pathname === '/cart';
 
-    const handleEmptyCart = () => onEmptyCart();
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.items);
+    const totalProductsCount = cartItems.reduce((total, product) => total + product.count, 0);
+    const totalProductsPrice = cartItems.reduce((total, product) => total + (product.count * product.price), 0);
 
-    const renderEmptyCart = () => (
-        <Typography variant="subtitle1">
-            You have no items in your shopping cart,
-            <Link className={classes.link} to="/">
-                start adding some
-            </Link>
-            !
-        </Typography>
-    );
+    const handleRemoveProduct = (productId) => {
+        dispatch(removeProductFromCart(productId)); // Вызов действия для удаления продукта
+    };
 
-    const renderCart = () => (
-        <>
-            <Grid container spacing={4}>
-                {cart.items.map((lineItem) => (
-                    <Grid item xs={12} sm={4} key={lineItem.id}>
-                        {/*
-              Здесь вам нужно передать функции onUpdateCartQty и onRemoveFromCart
-              из пропсов, так как они используются внутри CartItem.
-            */}
-                        <CartItem
-                            item={lineItem}
-                            onUpdateCartQty={onUpdateCartQty}
-                            onRemoveFromCart={onRemoveFromCart}
-                        />
-                    </Grid>
-                ))}
-            </Grid>
-            <div className={classes.cardDetails}>
-                <Typography variant="h5">
-                    Subtotal: <b>{cart.subtotal.formatted_with_symbol}</b>
-                </Typography>
-                <div>
-                    <Button
-                        className='emptyButton'
-                        size="large"
-                        type="button"
-                        variant="contained"
-                        color="secondary"
-                        onClick={handleEmptyCart}
-                    >
-                        Empty cart
-                    </Button>
-                    <Button
-                        className='checkoutButton'
-                        component={Link}
-                        to="/checkout"
-                        size="large"
-                        type="button"
-                        variant="contained"
-                    >
-                        Checkout
-                    </Button>
-                </div>
+    if (isCartPage) {
+        return (
+            <div className='cart__container'>
+                <h1 className='cart__basket'>Корзина</h1>
+                <p className='cart__total-count'>Общее количество продуктов в корзине: {totalProductsCount}</p>
+                <ul className='cart__item'>
+                    {cartItems.map((product, index) => (
+                        <li key={index}>
+                            <img src={product.image} alt="#"/>
+                            <p className='cart__title'>{product.title}</p>
+                            <p className='cart__price'>{product.price} сом</p>
+                            <p className='cart__count'>Количество: {product.count}</p>
+                            <button onClick={() => handleRemoveProduct(product.id)}>Удалить</button>
+                        </li>
+                    ))}
+                </ul>
+                <p className='cart__total-price'>Общая сумма: {totalProductsPrice} сом</p>
             </div>
-        </>
-    );
-
-    return (
-        <>
-            <div className={classes.toolbar} />
-            <div className={classes.title} variant="h5" gutterBottom>
-                <b>Your Shopping Cart</b>
-            </div>
-            <hr />
-            {cart.items.length === 0 ? renderEmptyCart() : renderCart()}
-        </>
-    );
+        );
+    } else {
+        return null;
+    }
 };
 
-export default CartPage;
-
-
+export default Cart;
 
 
 

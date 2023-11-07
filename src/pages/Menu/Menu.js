@@ -1,6 +1,5 @@
 import React from 'react';
 import ProductMenu from "../../components/ProductMenu/ProductMenu";
-import ProductItem from "../../components/ProductItem/ProductItem";
 import ProductList from "../../components/ProductItem/ProductList";
 
 const Menu = () => {
